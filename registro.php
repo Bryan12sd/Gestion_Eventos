@@ -2,12 +2,6 @@
 
 include 'db/config.php';
 
-// Verificar si el usuario está autenticado y es administrador
-/* if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
-    header("Location: login.php");
-    exit();
-} */
-
 // Manejar el envío del formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -24,7 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Insertar el usuario en la base de datos
         $sql = "INSERT INTO usuarios (username, password, rol) VALUES ('$username', '$passwordHash', '$rol')";
         if ($conn->query($sql)) {
+            // Mensaje de éxito
             $mensaje = "Usuario creado exitosamente.";
+
+            // Redirigir al login después de 3 segundos
+            header("refresh:1; url=login.php"); // Redirige a login.php después de 3 segundos
         } else {
             $mensaje = "Error al crear el usuario: " . $conn->error;
         }
@@ -67,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Registrar Usuario</button>
         </form>
 
-        <a href="login.php">Iniciar Sesion</a>
+
     </div>
 </body>
 

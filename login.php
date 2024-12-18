@@ -2,6 +2,8 @@
 session_start();
 include 'db/config.php';
 
+$mensajeError = ""; // Variable para almacenar el mensaje de error
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: menu.php");
             exit();
         } else {
-            echo "Contraseña incorrecta.";
+            $mensajeError = "Contraseña incorrecta.";
         }
     } else {
-        echo "Usuario no encontrado.";
+        $mensajeError = "Usuario no encontrado.";
     }
 }
 ?>
@@ -37,7 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <div class="container">
-        <h1>Iniciar Sesión</h1>
+        <h1>Gestion de Eventos</h1>
+
+        <!-- Mostrar el mensaje de error si existe -->
+        <?php if (!empty($mensajeError)): ?>
+            <div class="error-message"><?php echo $mensajeError; ?></div>
+        <?php endif; ?>
+
         <form action="login.php" method="POST">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required><br><br>
@@ -46,8 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" id="password" name="password" required><br><br>
 
             <button type="submit">Ingresar</button>
+            <a href="registro.php">Registrarse</a>
         </form>
     </div>
+
 </body>
 
 </html>
