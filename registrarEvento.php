@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/registrar_evento.css">
     <title>Registrar Evento</title>
 </head>
 
@@ -56,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="titulo">Título:</label><br>
         <input type="text" id="titulo" name="titulo" required><br><br>
 
-        <label for="invitados">Invitados:</label><br>
+        <label for="invitados">Número de Invitados:</label><br>
         <input type="text" id="invitados" name="invitados" required><br><br>
 
         <label for="fecha_hora">Fecha y Hora:</label><br>

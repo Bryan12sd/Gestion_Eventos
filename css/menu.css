@@ -1,0 +1,73 @@
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Para asegurar que ocupe toda la pantalla */
+}
+
+/* Título principal */
+h1 {
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Subtítulo de menú */
+h2 {
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Lista de enlaces de menú */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre los botones */
+}
+
+/* Estilo para los enlaces del menú */
+ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+ul li a:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para el enlace de cerrar sesión */
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #f44336;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+/* Efecto al pasar el mouse sobre el enlace de cerrar sesión */
+a:hover {
+    background-color: #d32f2f;
+}

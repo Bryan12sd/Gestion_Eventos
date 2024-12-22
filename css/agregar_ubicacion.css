@@ -1,0 +1,81 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9; /* Fondo neutro */
+    color: #333; /* Color de texto oscuro */
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #444; /* Encabezado en tono neutral */
+    margin-bottom: 20px;
+}
+
+/* Estilo del formulario */
+form {
+    max-width: 500px;
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Borde neutral */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px;
+    box-sizing: border-box; /* Ajuste del tamaño */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff; /* Azul neutral */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff; /* Azul para enlaces */
+}
+
+a:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Responsivo para dispositivos pequeños */
+@media (max-width: 768px) {
+    form {
+        width: 95%; /* Ocupa casi todo el ancho en dispositivos pequeños */
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

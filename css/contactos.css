@@ -1,0 +1,77 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9; /* Fondo neutro */
+    color: #333; /* Color de texto principal */
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #444; /* Encabezado en tono neutro */
+    margin-bottom: 20px;
+}
+
+/* Estilo de los contactos */
+div {
+    background-color: #fff; /* Fondo blanco para los contactos */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre elementos */
+}
+
+img {
+    border-radius: 50%; /* Imagen en forma de círculo */
+    border: 1px solid #ccc; /* Borde suave */
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Ajuste de la imagen */
+}
+
+h3 {
+    margin: 0 0 10px 0;
+    color: #007bff; /* Color azul para el saludo */
+}
+
+p {
+    margin: 5px 0;
+}
+
+a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* Azul para los enlaces */
+    border-radius: 5px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Responsivo para dispositivos pequeños */
+@media (max-width: 768px) {
+    div {
+        flex-direction: column; /* Cambia la dirección a vertical en dispositivos pequeños */
+        align-items: flex-start;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
+
+    a {
+        width: 100%; /* Enlaces ocupan todo el ancho */
+        text-align: center;
+    }
+}

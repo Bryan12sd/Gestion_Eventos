@@ -1,0 +1,62 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9; /* Fondo gris claro */
+    color: #333; /* Texto oscuro para contraste */
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #444; /* Tono neutral para encabezados */
+    margin-bottom: 20px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff; /* Azul neutral */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Contenedor principal para las ubicaciones */
+div {
+    background-color: #fff;
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px;
+    margin: 10px auto;
+    width: 80%; /* Ajustar el ancho para pantallas grandes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    div {
+        width: 95%; /* Ocupa casi todo el ancho en dispositivos pequeños */
+    }
+
+    a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
