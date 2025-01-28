@@ -61,7 +61,7 @@ form input:focus, form select:focus {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #28a745; /* Verde para el botón */
+    background-color: #1e7e34; /* Verde para el botón */
     color: #ffffff;
     font-size: 16px;
     border: none;
