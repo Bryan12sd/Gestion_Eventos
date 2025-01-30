@@ -8,6 +8,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 // Incluir la conexión a la base de datos
+include 'config.php';
 include 'db/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -52,39 +53,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <h1>Registrar un nuevo evento</h1>
+    <h1><?php echo $translations['register_new_event']; ?></h1>
+    <div class="language-switcher">
+        <a class='language' href="switch_lang.php?lang=es">Español</a>
+        <a class='language' href="switch_lang.php?lang=en">English</a>
+    </div>
+
     <form method="POST">
-        <label for="titulo">Título:</label><br>
+        <label for="titulo"><?php echo $translations['title']; ?>:</label><br>
         <input type="text" id="titulo" name="titulo" required><br><br>
 
-        <label for="invitados">Número de Invitados:</label><br>
+        <label for="invitados"><?php echo $translations['number_of_guests']; ?>:</label><br>
         <input type="text" id="invitados" name="invitados" required><br><br>
 
-        <label for="fecha_hora">Fecha y Hora:</label><br>
+        <label for="fecha_hora"><?php echo $translations['date_and_time']; ?>:</label><br>
         <input type="datetime-local" id="fecha_hora" name="fecha_hora" required><br><br>
 
-        <label for="zona_horaria">Zona Horaria:</label><br>
+        <label for="zona_horaria"><?php echo $translations['timezone']; ?>:</label><br>
         <input type="text" id="zona_horaria" name="zona_horaria" required><br><br>
 
-        <label for="descripcion">Descripción:</label><br>
+        <label for="descripcion"><?php echo $translations['description']; ?>:</label><br>
+        <!-- Traducción para "Descripción" -->
         <textarea id="descripcion" name="descripcion" required></textarea><br><br>
 
-        <label for="repeticion">Repetición:</label><br>
+        <label for="repeticion"><?php echo $translations['recurrence']; ?>:</label><br>
+        <!-- Traducción para "Repetición" -->
         <input type="text" id="repeticion" name="repeticion" required><br><br>
 
-        <label for="recordatorio">Recordatorio:</label><br>
+        <label for="recordatorio"><?php echo $translations['reminder']; ?>:</label><br>
+        <!-- Traducción para "Recordatorio" -->
         <input type="text" id="recordatorio" name="recordatorio" required><br><br>
 
-        <label for="clasificacion">Clasificación:</label><br>
+        <label for="clasificacion"><?php echo $translations['classification']; ?>:</label><br>
+        <!-- Traducción para "Clasificación" -->
         <input type="text" id="clasificacion" name="clasificacion" required><br><br>
 
-        <label for="lugar">Lugar:</label><br>
+        <label for="lugar"><?php echo $translations['location']; ?>:</label><br> <!-- Traducción para "Lugar" -->
         <input type="text" id="lugar" name="lugar" required><br><br>
 
-        <button type="submit">Registrar Evento</button>
+        <button type="submit"><?php echo $translations['register_event']; ?></button>
+        <!-- Traducción para "Registrar Evento" -->
     </form>
     <br>
-    <a href="menu.php">Volver al menú</a>
+    <a href="menu.php"><?php echo $translations['back_to_menu']; ?></a>
+
 </body>
 
 </html>

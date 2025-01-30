@@ -22,6 +22,24 @@ return [
     'events' => 'Eventos',
     'locations' => 'Ubicaciones',
     'contacts' => 'Contactos',
-    'logout' => 'Cerrar sesión'
+    'logout' => 'Cerrar sesión',
+    'conferences_workshops_seminars' => 'Conferencias, Talleres y Seminarios',
+    'header' => 'Título',
+    'guests' => 'Invitados',
+    'date_time' => 'Fecha y Hora',
+    'timezone' => 'Zona Horaria',
+    'description' => 'Descripción',
+    'recurrence' => 'Repetición',
+    'reminder' => 'Recordatorio',
+    'classification' => 'Clasificación',
+    'location' => 'Lugar',
+    'no_events_available' => 'No hay eventos disponibles.',
+    'create_event' => 'Crear Evento',
+    'back_to_menu' => 'Volver al menú',
+    'register_new_event' => 'Registrar un nuevo evento',
+    'number_of_guests' => 'Número de Invitados',
+    'date_and_time' => 'Fecha y Hora',
+    'register_event' => 'Registrar Evento',
+
 ];
 ?>

@@ -76,10 +76,27 @@ a {
     color:#004085;
 }
 
+.language  {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #004085;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
 a:hover {
     text-decoration: underline;
 }
-
+.language-switcher {
+    position: fixed; /* Posiciona el contenedor de manera fija */
+    top: 0;          /* En la parte superior de la pantalla */
+    right: 0;        /* En la esquina derecha */
+    padding: 10px;   /* Espacio alrededor de los enlaces */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    z-index: 1000;   /* Asegura que se superponga al contenido */
+}
 /* Estilos responsivos para dispositivos pequeños */
 @media (max-width: 600px) {
     form {

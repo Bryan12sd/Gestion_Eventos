@@ -22,6 +22,24 @@ return [
     'events' => 'Events',
     'locations' => 'Locations',
     'contacts' => 'Contacts',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'conferences_workshops_seminars' => 'Conferences, Workshops, and Seminars',
+    'header' => 'Title',
+    'guests' => 'Guests',
+    'date_time' => 'Date and Time',
+    'timezone' => 'Timezone',
+    'description' => 'Description',
+    'recurrence' => 'Recurrence',
+    'reminder' => 'Reminder',
+    'classification' => 'Classification',
+    'location' => 'Location',
+    'no_events_available' => 'No events available.',
+    'create_event' => 'Create Event',
+    'back_to_menu' => 'Back to Menu',
+    'register_new_event' => 'Register a new event',
+    'number_of_guests' => 'Number of Guests',
+    'date_and_time' => 'Date and Time',
+    'register_event' => 'Register Event',
+
 ];
 ?>
