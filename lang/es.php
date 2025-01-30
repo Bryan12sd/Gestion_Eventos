@@ -48,11 +48,10 @@ return [
     'register_location' => 'Registrar Ubicación',
     'back_to_locations' => 'Volver a las Ubicaciones',
     'no_contacts' => 'No hay contactos registrados.',
-
-
-
-
-
+    'register_user' => 'Registrar Nuevo Usuario',
+    'role' => 'Rol',
+    'admin' => 'Administrador',
+    'employee' => 'Empleado',
 
 ];
 ?>

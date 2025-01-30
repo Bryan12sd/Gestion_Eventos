@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 include 'db/config.php';
-
+include 'config.php';
 // Manejar el envío del formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -42,31 +42,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <div class="container">
-        <h1>Registrar Nuevo Usuario</h1>
-
+        <h1><?= $translations['register_user']; ?></h1>
+        <div class="language-switcher">
+            <a class='language' href="switch_lang.php?lang=es">Español</a>
+            <a class='language' href="switch_lang.php?lang=en">English</a>
+        </div>
         <!-- Mostrar mensaje -->
         <?php if (isset($mensaje)): ?>
-            <p style="color: green;"><?php echo $mensaje; ?></p>
+            <p style="color: green;"><?= $mensaje; ?></p>
         <?php endif; ?>
 
         <form action="registro.php" method="POST">
-            <label for="username">Nombre de Usuario:</label>
+            <label for="username"><?= $translations['username']; ?>:</label>
             <input type="text" id="username" name="username" required><br><br>
 
-            <label for="password">Contraseña:</label>
+            <label for="password"><?= $translations['password']; ?>:</label>
             <input type="password" id="password" name="password" required><br><br>
 
-            <label for="rol">Rol:</label>
+            <label for="rol"><?= $translations['role']; ?>:</label>
             <select id="rol" name="rol" required>
-                <option value="admin">Administrador</option>
-                <option value="empleado">Empleado</option>
+                <option value="admin"><?= $translations['admin']; ?></option>
+                <option value="empleado"><?= $translations['employee']; ?></option>
             </select><br><br>
 
-            <button type="submit">Registrar Usuario</button>
+            <button type="submit"><?= $translations['register']; ?></button>
         </form>
-
-
     </div>
+
 </body>
 
 </html>

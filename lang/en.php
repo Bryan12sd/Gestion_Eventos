@@ -53,9 +53,11 @@ return [
     "label_coordinates" => "Coordinates",
     "btn_register_location" => "Register Location",
     "btn_back_to_locations" => "Back to Locations",
-    "btn_change_language" => "Change Language"
-
-
+    "btn_change_language" => "Change Language",
+    'register_user' => 'Register New User',
+    'role' => 'Role',
+    'admin' => 'Administrator',
+    'employee' => 'Employee',
 
 ];
 ?>
