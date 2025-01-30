@@ -1,8 +1,9 @@
 <?php
+session_start();
 include 'db/config.php';
 include 'config.php'; // Cargar traducciones
 
-session_start();
+
 
 $mensajeError = ""; // Variable para mensaje de error
 
