@@ -46,7 +46,15 @@ return [
     'add_new_location' => 'Add New Location',
     'add_location' => 'Add New Location',
     'register_location' => 'Register Location',
-    'back_to_locations' => 'Back to Locations'
+    'back_to_locations' => 'Back to Locations',
+    'no_contacts' => 'No contacts registered.',
+    "label_title" => "Title",
+    "label_address" => "Address",
+    "label_coordinates" => "Coordinates",
+    "btn_register_location" => "Register Location",
+    "btn_back_to_locations" => "Back to Locations",
+    "btn_change_language" => "Change Language"
+
 
 
 ];

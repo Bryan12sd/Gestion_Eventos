@@ -7,6 +7,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 include 'db/config.php';
+include 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $saludo = $_POST['saludo'];
@@ -40,29 +41,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <h1>Agregar Nuevo Contacto</h1>
-    <form action="agregar_contacto.php" method="POST">
-        <label for="saludo">Saludo:</label><br>
-        <input type="text" id="saludo" name="saludo" required><br><br>
 
-        <label for="nombre_completo">Nombre Completo:</label><br>
+
+    <h1><?= $translations['add_new_contact']; ?></h1>
+    <div class="language-switcher">
+        <a class='language' href="switch_lang.php?lang=es">Español</a>
+        <a class='language' href="switch_lang.php?lang=en">English</a>
+    </div>
+
+    <form action="agregar_contacto.php" method="POST">
+
+        <label for="nombre_completo"><?= $translations['full_name']; ?>:</label><br>
         <input type="text" id="nombre_completo" name="nombre_completo" required><br><br>
 
-        <label for="numero_identificacion">Número de Identificación:</label><br>
+        <label for="numero_identificacion"><?= $translations['id_number']; ?>:</label><br>
         <input type="text" id="numero_identificacion" name="numero_identificacion" required><br><br>
 
-        <label for="correo_electronico">Correo Electrónico:</label><br>
+        <label for="correo_electronico"><?= $translations['email']; ?>:</label><br>
         <input type="email" id="correo_electronico" name="correo_electronico" required><br><br>
 
-        <label for="numero_telefono">Número de Teléfono:</label><br>
+        <label for="numero_telefono"><?= $translations['phone_number']; ?>:</label><br>
         <input type="text" id="numero_telefono" name="numero_telefono" required><br><br>
 
-        <label for="fotografia">Fotografía (URL o Ruta del archivo):</label><br>
+        <label for="fotografia"><?= $translations['photo']; ?>:</label><br>
         <input type="text" id="fotografia" name="fotografia" required><br><br>
 
-        <button type="submit">Agregar Contacto</button>
+        <button type="submit"><?= $translations['add_contact']; ?></button>
     </form>
-    <a href="contactos.php">Volver a los Contactos</a>
+
+    <a href="contactos.php"><?= $translations['back_to_contacts']; ?></a>
+
+
+
 </body>
 
 </html>

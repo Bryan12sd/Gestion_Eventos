@@ -47,6 +47,10 @@ return [
     'add_location' => 'Agregar Nueva Ubicación',
     'register_location' => 'Registrar Ubicación',
     'back_to_locations' => 'Volver a las Ubicaciones',
+    'no_contacts' => 'No hay contactos registrados.',
+
+
+
 
 
 
