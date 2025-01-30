@@ -66,6 +66,21 @@ a {
     margin-top: 30px;
     display: inline-block;
 }
+.language {
+    text-decoration: none;
+    color: #fff;
+    background-color: #1e7e34;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+    margin-top: 30px;
+    display: inline-block;
+}
+.language:hover {
+    background-color: #45a049;
+}
 
 /* Efecto al pasar el mouse sobre el enlace de cerrar sesión */
 a:hover {

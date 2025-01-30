@@ -1,8 +1,9 @@
 <?php
-session_start();
-include 'db/config.php';
 
-$mensajeError = ""; // Variable para almacenar el mensaje de error
+include 'db/config.php';
+include 'config.php'; // Cargar traducciones
+
+$mensajeError = ""; // Variable para mensaje de error
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -14,57 +15,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         $usuario = $result->fetch_assoc();
 
-        // Verificar contraseña
         if (password_verify($password, $usuario['password'])) {
             $_SESSION['usuario'] = $usuario;
             header("Location: menu.php");
             exit();
         } else {
-            $mensajeError = "Contraseña incorrecta.";
+            $mensajeError = $translations['error_wrong_password'];
         }
     } else {
-        $mensajeError = "Usuario no encontrado.";
+        $mensajeError = $translations['error_user_not_found'];
     }
 }
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<?= $_SESSION['lang']; ?>">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login.css">
-    <title>Iniciar Sesión</title>
+    <title><?= $translations['title']; ?></title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Gestion de Eventos</h1>
+        <h1><?= $translations['event_management']; ?></h1>
 
-        <!-- Mostrar el mensaje de error si existe -->
+        <!-- Mostrar mensaje de error si existe -->
         <?php if (!empty($mensajeError)): ?>
             <div class="error-message"><?php echo $mensajeError; ?></div>
         <?php endif; ?>
 
         <form action="login.php" method="POST">
-            <label for="username">Usuario:</label>
+            <label for="username"><?= $translations['username']; ?>:</label>
             <input type="text" id="username" name="username" required><br><br>
 
-            <label for="password">Contraseña:</label>
+            <label for="password"><?= $translations['password']; ?>:</label>
             <input type="password" id="password" name="password" required><br><br>
 
-
-            <div class=containerButton>
-                <button type="submit">Ingresar</button>
-
+            <div class="containerButton">
+                <button type="submit"><?= $translations['login']; ?></button>
             </div>
-            <div class=containerButton>
-
-                <a href="registro.php">Registrarse</a>
+            <div class="containerButton">
+                <a href="registro.php"><?= $translations['register']; ?></a>
             </div>
-
-
         </form>
+
+        <!-- Selector de idioma -->
+        <div>
+            <a href="switch_lang.php?lang=es">Español</a> |
+            <a href="switch_lang.php?lang=en">English</a>
+        </div>
     </div>
 
 </body>

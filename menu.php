@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'config.php'; // Cargar el sistema de traducción
 // Verificamos si la sesión está iniciada, si no, redirigimos a login
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
@@ -20,16 +20,20 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <h1>Bienvenido, <?php echo $_SESSION['usuario']['username']; ?></h1>
+    <h1><?= $translations['welcome'] . $_SESSION['usuario']['username']; ?></h1>
 
-    <h2>Menú</h2>
+    <h2><?= $translations['menu']; ?></h2>
     <ul>
-        <li><a href="eventos.php">Eventos</a></li>
-        <li><a href="ubicaciones.php">Ubicaciones</a></li>
-        <li><a href="contactos.php">Contactos</a></li>
+        <li><a href="eventos.php"><?= $translations['events']; ?></a></li>
+        <li><a href="ubicaciones.php"><?= $translations['locations']; ?></a></li>
+        <li><a href="contactos.php"><?= $translations['contacts']; ?></a></li>
     </ul>
 
-    <a href="logout.php">Cerrar sesión</a>
+    <a href="logout.php"><?= $translations['logout']; ?></a>
+    <div>
+        <a class="language" href="switch_lang.php?lang=es">Español</a> |
+        <a class="language" href="switch_lang.php?lang=en">English</a>
+    </div>
 </body>
 
 </html>
