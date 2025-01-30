@@ -9,6 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 
 // Incluir la conexión a la base de datos
 include 'db/config.php';
+include 'config.php';
 
 // Consultar las ubicaciones desde la base de datos
 $sql = "SELECT * FROM ubicaciones";
@@ -25,7 +26,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <h1>Ubicaciones</h1>
+    <h1><?= $translations['locations']; ?></h1>
 
     <?php
     // Verificar si hay resultados
@@ -33,18 +34,22 @@ $result = $conn->query($sql);
         // Recorrer los resultados y mostrarlos
         while ($ubicacion = $result->fetch_assoc()) {
             echo "<div>";
-            echo "<h3>Título: " . $ubicacion['titulo'] . "</h3>";
-            echo "<p><strong>Dirección:</strong> " . $ubicacion['direccion'] . "</p>";
-            echo "<p><strong>Coordenadas Geográficas:</strong> " . $ubicacion['coordenadas'] . "</p>";
+            echo "<h3>" . $translations['header'] . ": " . $ubicacion['titulo'] . "</h3>";
+            echo "<p><strong>" . $translations['address'] . ":</strong> " . $ubicacion['direccion'] . "</p>";
+            echo "<p><strong>" . $translations['coordinates'] . ":</strong> " . $ubicacion['coordenadas'] . "</p>";
             echo "</div><br>";
         }
     } else {
-        echo "<p>No hay ubicaciones registradas.</p>";
+        echo "<p>" . $translations['no_locations'] . "</p>";
     }
     ?>
 
-    <a href="agregar_ubicacion.php">Agregar Nueva Ubicación</a>
-    <a href="menu.php">Volver al menú</a>
-</body>
+    <a href="agregar_ubicacion.php"><?= $translations['add_new_location']; ?></a>
+    <a href="menu.php"><?= $translations['back_to_menu']; ?></a>
+    <a href="switch_lang.php?lang=es">Español</a> |
+    <a href="switch_lang.php?lang=en">English</a>
+
+
+
 
 </html>

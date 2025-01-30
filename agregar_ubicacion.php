@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 
 // Incluir la conexión a la base de datos
 include 'db/config.php';
-
+include 'config.php';
 // Verificar si se ha enviado el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recoger los datos del formulario
@@ -42,21 +42,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <h1>Agregar Nueva Ubicación</h1>
+    <h1><?= $translations['add_location']; ?></h1>
+    <div class="language-switcher">
+        <a class='language' href="switch_lang.php?lang=es">Español</a>
+        <a class='language' href="switch_lang.php?lang=en">English</a>
+    </div>
+
     <form action="agregar_ubicacion.php" method="POST">
-        <label for="titulo">Título:</label><br>
+        <label for="titulo"><?= $translations['header']; ?>:</label><br>
         <input type="text" id="titulo" name="titulo" required><br><br>
 
-        <label for="direccion">Dirección:</label><br>
+        <label for="direccion"><?= $translations['address']; ?>:</label><br>
         <input type="text" id="direccion" name="direccion" required><br><br>
 
-        <label for="coordenadas">Coordenadas Geográficas:</label><br>
+        <label for="coordenadas"><?= $translations['coordinates']; ?>:</label><br>
         <input type="text" id="coordenadas" name="coordenadas" required><br><br>
 
-        <button type="submit">Registrar Ubicación</button>
+        <button type="submit"><?= $translations['register_location']; ?></button>
     </form>
 
-    <a href="ubicaciones.php">Volver a las Ubicaciones</a>
+    <a href="ubicaciones.php"><?= $translations['back_to_locations']; ?></a>
 </body>
 
 </html>

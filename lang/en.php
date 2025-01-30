@@ -40,6 +40,14 @@ return [
     'number_of_guests' => 'Number of Guests',
     'date_and_time' => 'Date and Time',
     'register_event' => 'Register Event',
+    'address' => 'Address',
+    'coordinates' => 'Geographic Coordinates',
+    'no_locations' => 'No locations registered.',
+    'add_new_location' => 'Add New Location',
+    'add_location' => 'Add New Location',
+    'register_location' => 'Register Location',
+    'back_to_locations' => 'Back to Locations'
+
 
 ];
 ?>

@@ -40,6 +40,15 @@ return [
     'number_of_guests' => 'Número de Invitados',
     'date_and_time' => 'Fecha y Hora',
     'register_event' => 'Registrar Evento',
+    'address' => 'Dirección',
+    'coordinates' => 'Coordenadas Geográficas',
+    'no_locations' => 'No hay ubicaciones registradas.',
+    'add_new_location' => 'Agregar Nueva Ubicación',
+    'add_location' => 'Agregar Nueva Ubicación',
+    'register_location' => 'Registrar Ubicación',
+    'back_to_locations' => 'Volver a las Ubicaciones',
+
+
 
 ];
 ?>
