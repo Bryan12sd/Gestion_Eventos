@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formulario Continuo</title>
+        <style>
+      /* Body Styles */
+      body {
+        font-family: "Inter", sans-serif;
+        color: #2d3436;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+        margin: 0;
+      }
+
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: 1150px;
+        padding: 130px;
+        border-radius: 15px;
+      }
+
+      .container:hover {
+        transform: translateY(0px);
+      }
+
+      /* Header */
+      h2 {
+        margin: 0;
+        color: #005f60;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 05px;
+      }
+
+      /* Question Section */
+      .question {
+        margin-bottom: 10px;
+      }
+
+      .question label {
+        display: block;
+        margin-bottom: 1px;
+        font-weight: bold;
+        color: #4b4f54;
+      }
+
+      /* Input/Select Styling */
+      .question input,
+      .question select {
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 1rem;
+        color: #495057;
+        border: 2px solid #ccd0d5;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+      }
+
+      .question input:focus,
+      .question select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        outline: none;
+      }
+
+      /* Grid Layout */
+      .question-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      /* Button Styling */
+      button {
+        display: block;
+        margin: 0 auto;
+        width: 20%;
+        padding: 10px 10px;
+        font-size: 1.1rem;
+        background: #005f60;
+
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(145deg, #0056b3, #003d80);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      button:active {
+        transform: translateY(1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Hidden Elements */
+      .hidden {
+        display: none;
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+        }
+
+        .question-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .question-grid {
+          grid-template-columns: 1fr;
+        }
+
+        button {
+          font-size: 1rem;
+        }
+      }
+
+      #paypal-button-container {
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      p {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Formulario de Contribución</h2>
+            <p>
+                <b>Únete a nuestra Red de Filántropos alrededor del mundo y
+                    permite que
+                    más personas accedan a nuestros programas y proyectos
+                    educativos. No
+                    existen contribuciones grandes o pequeñas cuando se trata de
+                    transformar vidas.</b>
+            </p>
+            <form id="mainForm">
+                <!-- Datos Personales -->
+                <div class="question">
+                    <div class="question-grid">
+                        <div>
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" name="nombre" id="nombre"
+                                required />
+                        </div>
+                        <div>
+                            <label for="apellido">Apellido*</label>
+                            <input type="text" name="apellido" id="apellido"
+                                required />
+                        </div>
+                        <div>
+                            <label for="tipoIdentificacion">Tipo de
+                                identificación*</label>
+                            <input
+                                type="text"
+                                name="tipoIdentificacion"
+                                id="tipoIdentificacion"
+                                required />
+                        </div>
+                        <div>
+                            <label for="numeroIdentificacion">Número de
+                                identificación*</label>
+                            <input
+                                type="text"
+                                name="numeroIdentificacion"
+                                id="numeroIdentificacion"
+                                required />
+                        </div>
+                        <div>
+                            <label for="correo">Correo*</label>
+                            <input type="email" name="correo" id="correo"
+                                required />
+                        </div>
+                        <div>
+                            <label for="ocupacion">Ocupación*</label>
+                            <input type="text" name="ocupacion" id="ocupacion"
+                                required />
+                        </div>
+                        <div>
+                            <label for="sectorOcupacion">Sector
+                                ocupacional*</label>
+                            <select name="sectorOcupacion" id="sectorOcupacion"
+                                required>
+                                <option value>Elige</option>
+                                <option value="Educativo">Educativo</option>
+                                <option
+                                    value="Agropecuario">Agropecuario</option>
+                                <option value="Servicios">Servicios</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Comercio">Comercio</option>
+                                <option value="Transporte">Transporte</option>
+                                <option
+                                    value="Comunicaciones">Comunicaciones</option>
+                                <option value="Financiero">Financiero</option>
+                                <option
+                                    value="Construcción">Construcción</option>
+                                <option value="Minero Energético">Minero
+                                    Energético</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="nombreOrganizacion">Nombre de tu
+                                organización*</label>
+                            <input
+                                type="text"
+                                name="nombreOrganizacion"
+                                id="nombreOrganizacion"
+                                required />
+                        </div>
+                        <div>
+                            <label for="pais">País*</label>
+                            <input type="text" name="pais" id="pais" required />
+                        </div>
+                        <!-- Preguntas del Formulario -->
+                        <div class>
+                            <label for>Selecciona una categoría*</label>
+                            <select name="actividad" id="actividad"
+                                onchange="showSelect()">
+                                <option value>Elige</option>
+                                <option value="DIPLOMADO INTERNACIONAL">
+                                    DIPLOMADO INTERNACIONAL
+                                </option>
+                                <option value="CURSO EJECUTIVO">
+                                    CURSO EJECUTIVO
+                                </option>
+                                <option value="PENSER ACADEMY">
+                                    PENSER ACADEMY
+                                </option>
+                                <option value="RECONOCIMIENTO LATINOAMERICANO">
+                                    RECONOCIMIENTO LATINOAMERICANO
+                                </option>
+                                <option value="CONTRIBUCIÓN GENERAL">
+                                    CONTRIBUCIÓN GENERAL
+                                </option>
+                            </select>
+                        </div>
+
+                        <!-- DIPLOMADO INTERNACIONAL -->
+                        <div class="question hidden" id="diplomadoSelect">
+                            <label for>Selecciona el Diplomado*</label>
+                            <select
+                                name="diplomado"
+                                id="diplomado"
+                                onchange="showModuloSelect()">
+                                <option value disabled selected>Elige</option>
+                                <option value="Docencia superior">
+                                    Docencia Superior: "El profesorado, la
+                                    multidimensionalidad y
+                                    la educación para afrontar el futuro"
+                                </option>
+                                <option
+                                    value="Escritura y publicacion de textos cientificos">
+                                    Escritura y publicacion de textos
+                                    científicos: "La divulgación
+                                    científica con sentido estratégico"
+                                </option>
+                                <option
+                                    value="Inteligencia Artificial para la educación">
+                                    Inteligencia Artificial para la Educación:
+                                    "Tendencias 2025 - 2030"
+                                    <option
+                                        value="Evaluación de impacto de la Educación Superior">
+                                        Evaluación de Impacto de la Educación
+                                        Superior:
+                                        "Enfoques, procedimientos y herramientas"
+                                    </option>
+                                </select>
+                            </div>
+
+                            <!-- CURSO EJECUTIVO -->
+                            <div class="question hidden"
+                                id="cursoEjecutivoSelect">
+                                <label for>Selecciona un curso
+                                    ejecutivo*</label>
+                                <select name="cursoEjecutivo"
+                                    id="cursoEjecutivo">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="Aprendizaje">
+                                        Aprendizaje Basado en Retos
+                                        (Challenge-Based Learning)
+                                    </option>
+                                    <option value="Neurociencia">
+                                        La neurociencia y la educación
+                                    </option>
+                                    <option
+                                        value="Cooperación Internacional en Educación">
+                                        Cooperación Internacional en Educación
+                                    </option>
+                                    <option
+                                        value="Diseño Universal para el Aprendizaje">
+                                        Diseño Universal para el Aprendizaje
+                                    </option>
+                                    <option
+                                        value="Inteligencia Artificial y Aprendizaje Adaptativo">
+                                        Inteligencia Artificial y Aprendizaje
+                                        Adaptativo
+                                    </option>
+                                    <option
+                                        value="Storytelling en la Educación Superior">
+                                        Storytelling en la Educación Superior
+                                    </option>
+                                    <option value="Edutainment y Gamificación">
+                                        Edutainment y Gamificación
+                                    </option>
+                                    <option
+                                        value="Pedagogía de la Sostenibilidad">
+                                        Pedagogía de la Sostenibilidad
+                                    </option>
+                                    <option
+                                        value="Cultura Maker en la Educación Superior">
+                                        Cultura Maker en la Educación Superior
+                                    </option>
+                                    <option
+                                        value="Visualización de Datos para el Aprendizaje">
+                                        Visualización de Datos para el
+                                        Aprendizaje
+                                    </option>
+                                    <option
+                                        value="El Profesor Universitario como Influencer Académico">
+                                        El Profesor Universitario como
+                                        Influencer Académico
+                                    </option>
+                                </select>
+                            </div>
+
+                            <!-- PENSER ACADEMY -->
+                            <div class="question hidden" id="apcSelect">
+                                <label for>Selecciona APC*</label>
+                                <select name="apc" id="apc">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="Apc1">
+                                        Apc. Flipped Learning: Invierte el rol,
+                                        multiplica el impacto
+                                    </option>
+                                </select>
+                            </div>
+
+                            <!-- RECONOCIMIENTO LATINOAMERICANO -->
+                            <div class="question hidden"
+                                id="reconocimientoSelect">
+                                <label for="reconocimiento">Selecciona un
+                                    reconocimiento*</label>
+                                <select name="reconocimiento"
+                                    id="reconocimiento">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="A TODA UNA VIDA">A TODA UNA
+                                        VIDA</option>
+                                    <option
+                                        value="EMPRESARIO LATINOAMERICANO COMPROMETIDO CON LA EDUCACIÓN">
+                                        EMPRESARIO LATINOAMERICANO COMPROMETIDO
+                                        CON LA EDUCACIÓN
+                                    </option>
+                                    <option
+                                        value="ESTUDIANTE LATINOAMERICANO DESTACADO">
+                                        ESTUDIANTE LATINOAMERICANO DESTACADO
+                                    </option>
+                                    <option value="IN MEMORIAM">IN
+                                        MEMORIAM</option>
+                                    <option value="INFLUENCER EDUCATIVO LATAM">
+                                        INFLUENCER EDUCATIVO LATAM
+                                    </option>
+                                    <option
+                                        value="PROFESOR LATINOAMERICANO DESTACADO">
+                                        PROFESOR LATINOAMERICANO DESTACADO
+                                    </option>
+                                </select>
+                            </div>
+
+                            <!-- Modulos -->
+                            <div class="question hidden" id="moduloSelect">
+                                <label for>Selecciona el módulo*</label>
+                                <select name="modulo" id="modulo">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="Modulo 1">Módulo 1</option>
+                                    <option value="Modulo 2">Módulo 2</option>
+                                    <option value="Modulo 3">Módulo 3</option>
+                                    <option value="Modulo 4">Módulo 4</option>
+                                    <option value="Modulo 5">Módulo 5</option>
+                                    <option value="Modulo 6">Módulo 6</option>
+                                    <option value="Todo el diplomado">Todo el
+                                        diplomado</option>
+                                </select>
+                            </div>
+
+                            <!-- Modulos Específicos -->
+                            <div class="question hidden"
+                                id="moduloEspecificoSelect">
+                                <label for>Selecciona el módulo*</label>
+                                <select name="modulo" id="moduloEspecifico">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="Modulo 1 y 2">Módulo 1 y
+                                        2</option>
+                                    <option value="Modulo 3 y 4">Módulo 3 y
+                                        4</option>
+                                    <option value="Modulo 5 y 6">Módulo 5 y
+                                        6</option>
+                                    <option value="Todo el diplomado">Todo el
+                                        diplomado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monto de la contribución -->
+                    <div class="question">
+                        <div class="question-grid">
+                            <!-- Select de monto general -->
+                            <div id="montoContribucionSelect">
+                                <label for="contribucion">Selecciona un
+                                    monto*</label>
+                                <select
+                                    name="contribucion"
+                                    id="contribucion"
+                                    onchange="showOtherAmount()">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="10">10 USD</option>
+                                    <option value="20">20 USD</option>
+                                    <option value="30">30 USD</option>
+                                    <option value="40">40 USD</option>
+                                    <option value="50">50 USD</option>
+                                    <option value="60">60 USD</option>
+                                    <option value="70">70 USD</option>
+                                    <option value="80">80 USD</option>
+                                    <option value="90">90 USD</option>
+                                    <option value="100">100 USD</option>
+                                    <option value="Otro">Otro monto</option>
+                                </select>
+                            </div>
+
+                            <!-- Input para otros valores (mayores a 1 USD) -->
+                            <div id="other-amount-div" style="display: none">
+                                <label for="other-amount">Ingresa un monto en
+                                    USD*</label>
+                                <input
+                                    type="number"
+                                    name="otroMonto"
+                                    id="other-amount"
+                                    min="1"
+                                    placeholder="Monto en USD" />
+                            </div>
+
+                            <!-- Select de monto específico -->
+                            <div id="montoEspecificoSelect" class="hidden">
+                                <label for="montoEspecifico">Selecciona un
+                                    monto*</label>
+                                <select name="contribucion"
+                                    id="montoEspecifico">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="120">120 USD</option>
+                                    <option value="140">140 USD</option>
+                                    <option value="240">240 USD</option>
+                                    <option value="260">260 USD</option>
+                                    <option value="270">270 USD</option>
+                                </select>
+                            </div>
+
+                            <!-- Select de monto apc -->
+                            <div id="montoapcSelect" class="hidden">
+                                <label for="montoapc">Selecciona un
+                                    monto*</label>
+                                <select name="contribucion" id="montoapc">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="19.99">19.99 USD</option>
+                                </select>
+                            </div>
+
+                            <!-- Input oculto para el valor en pesos -->
+                            <input type="hidden" name="valorPesos"
+                                id="valorPesos" />
+
+                            <!-- Forma de Pago -->
+                            <div id="formaPagoSelect">
+                                <label for="formaPago">Selecciona tu forma de
+                                    pago*</label>
+                                <select name="formaPago" id="formaPago">
+                                    <option value disabled
+                                        selected>Elige</option>
+                                    <option value="Paypal">PayPal, Tarjeta de
+                                        crédito/débito </option>
+                                    <option value="Wompi">Tarjeta de
+                                        crédito/débito o PSE (Solo para
+                                        Colombia)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pago con Wompi -->
+                    <div id="wompi-payment" style="display: none">
+                        <form id="payment-form">
+                            <div style="text-align: center">
+                                <button type="button" id="wompi-button">Realizar
+                                    contribución</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Pago con PayPal -->
+                    <div id="paypal-payment" style="display: none">
+                        <div id="smart-button-container">
+                            <div style="text-align: center">
+                                <div id="paypal-button-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <label
+                        id="payment-status"
+                        style="font-size: 18px; font-weight: bold"></label>
+                    <label
+                        id="payment-status-paypal"
+                        style="margin-top: 20px; font-size: 18px; font-weight: bold"></label>
+
+                    <script src="https://checkout.wompi.co/widget.js"></script>
+                    <script
+                        src="https://www.paypal.com/sdk/js?client-id=AZWNJ7gn4vVm6fc-yFvxkcTX3yLM2YsZcOZEy0I7zKiupE5lUoaLssjlAIvnnjfk3qJwSUaXlkNJk9pg&currency=USD"
+                        data-sdk-integration-source="button-factory"></script>
+
+                    <script>
+          const USD_TO_COP = 4000; // Tasa de cambio de USD a COP
+          let paypalButtonInitialized = false; // Variable para verificar si el botón de PayPal ya fue inicializado
+
+          function convertToCOP(usdAmount) {
+            return usdAmount * USD_TO_COP;
+          }
+
+          document.getElementById("contribucion").addEventListener("change", function () {
+            const selectedValue = this.value;
+            const otherAmountDiv = document.getElementById("other-amount-div");
+
+            if (selectedValue === "Otro") {
+              otherAmountDiv.style.display = "block"; // Muestra el campo de entrada para otro valor
+            } else {
+              otherAmountDiv.style.display = "none"; // Oculta el campo de entrada
+            }
+          });
+
+          document.getElementById("formaPago").addEventListener("change", function () {
+            const selectedPaymentMethod = this.value;
+            document.getElementById("wompi-payment").style.display = "none";
+            document.getElementById("paypal-payment").style.display = "none";
+
+            if (selectedPaymentMethod === "Wompi") {
+              document.getElementById("wompi-payment").style.display = "block"; // Muestra el botón de Wompi
+            } else if (selectedPaymentMethod === "Paypal") {
+              document.getElementById("paypal-payment").style.display = "block"; // Muestra el botón de PayPal
+              if (!paypalButtonInitialized) {
+                initPayPalButton(); // Inicializa el botón de PayPal solo si no se ha hecho antes
+                paypalButtonInitialized = true; // Marca el botón como inicializado
+              }
+            }
+          });
+
+          document.getElementById("wompi-button").addEventListener("click", function () {
+            let selectedAmount = document.getElementById("contribucion").value;
+            const selectedAmountApc = document.getElementById("montoapc").value;
+            const selectedAmountEspecifico = document.getElementById("montoEspecifico").value;
+
+            if (selectedAmountEspecifico) {
+              selectedAmount = selectedAmountEspecifico;
+            } else if (selectedAmountApc) {
+              selectedAmount = selectedAmountApc;
+            } else if (selectedAmount === "Otro") {
+              selectedAmount = document.getElementById("other-amount").value;
+            }
+
+            if (!selectedAmount || isNaN(selectedAmount)) {
+              alert("Por favor, selecciona un monto válido.");
+              return;
+            }
+
+            const amountInCOP = convertToCOP(parseFloat(selectedAmount));
+            document.getElementById("valorPesos").value = amountInCOP.toLocaleString("es-CO");
+
+            const reference = "REF-" + Date.now();
+            const checkout = new WidgetCheckout({
+              currency: "COP",
+              amountInCents: amountInCOP * 100,
+              reference: reference,
+              publicKey: "pub_prod_e1k5UOzWzIyL5hFIIVl0cMlvkayzFsKN",
+            });
+
+            checkout.open(function (result) {
+              const transaction = result && result.transaction;
+              if (transaction) {
+                if (transaction.status === "APPROVED") {
+                  document.getElementById("payment-status").innerText = "✅ ¡Pago realizado con éxito!";
+                  document.getElementById("payment-status").style.color = "green";
+                  document.getElementById("submit-button").disabled = false;
+                  document.getElementById("wompi-payment").style.display = "none";
+                  document.getElementById("montoContribucionSelect").style.display = "none";
+                  document.getElementById("formaPagoSelect").style.display = "none";
+                  document.getElementById("other-amount-div").style.display = "none";
+                  document.getElementById("montoEspecificoSelect").style.display = "none";
+                  document.getElementById("montoapcSelect").style.display = "none";
+                } else {
+                  document.getElementById("payment-status").innerText = "❌ El pago no fue exitoso.";
+                  document.getElementById("payment-status").style.color = "red";
+                  document.getElementById("submit-button").disabled = false;
+                  document.getElementById("wompi-payment").style.display = "none";
+                }
+              } else {
+                document.getElementById("payment-status").innerText = "❌ No se recibió respuesta de Wompi.";
+                document.getElementById("payment-status").style.color = "red";
+                document.getElementById("submit-button").disabled = false;
+                document.getElementById("wompi-payment").style.display = "none";
+              }
+            });
+          });
+
+          function initPayPalButton() {
+            paypal
+              .Buttons({
+                style: {
+                  shape: "rect",
+                  color: "gold",
+                  layout: "vertical",
+                  label: "pay",
+                  height: 35,
+                  width: 150,
+                },
+
+                createOrder: function (data, actions) {
+                  let selectedAmount = document.getElementById("contribucion").value;
+                  const selectedAmountApc = document.getElementById("montoapc").value;
+                  const selectedAmountEspecifico = document.getElementById("montoEspecifico").value;
+
+                  if (selectedAmountEspecifico) {
+                    selectedAmount = selectedAmountEspecifico;
+                  } else if (selectedAmountApc) {
+                    selectedAmount = selectedAmountApc;
+                  } else if (selectedAmount === "Otro") {
+                    selectedAmount = document.getElementById("other-amount").value;
+                  }
+
+                  const amountInCOP = convertToCOP(parseFloat(selectedAmount));
+                  document.getElementById("valorPesos").value = amountInCOP.toLocaleString("es-CO");
+                  return actions.order
+                    .create({
+                      purchase_units: [
+                        {
+                          description: "LA DESCRIPCION DE TU PRODUCTO",
+                          amount: {
+                            currency_code: "USD",
+                            value: selectedAmount,
+                          },
+                        },
+                      ],
+                    })
+                    .then(function (orderId) {
+                      return orderId; // Asegúrate de retornar el ID del pedido
+                    });
+                },
+
+                onApprove: function (data, actions) {
+                  return actions.order.capture().then(function (orderData) {
+                    // Verificar el estado de la transacción
+                    if (orderData.status === "COMPLETED") {
+                      document.getElementById("payment-status-paypal").innerText = "✅ ¡Pago realizado con éxito!";
+                      document.getElementById("payment-status-paypal").style.color = "green";
+                      document.getElementById("submit-button").disabled = false;
+                      document.getElementById("paypal-payment").style.display = "none";
+                      document.getElementById("montoContribucionSelect").style.display = "none";
+                      document.getElementById("formaPagoSelect").style.display = "none";
+                      document.getElementById("other-amount-div").style.display = "none";
+                      document.getElementById("montoEspecificoSelect").style.display = "none";
+                      document.getElementById("montoapcSelect").style.display = "none";
+                    } else {
+                      document.getElementById("payment-status-paypal").innerText = "❌ El pago no fue exitoso.";
+                      document.getElementById("payment-status-paypal").style.color = "red";
+                      document.getElementById("submit-button").disabled = true;
+                      document.getElementById("paypal-payment").style.display = "none";
+                    }
+                  });
+                },
+
+                onError: function (err) {
+                  document.getElementById("payment-status-paypal").innerText = "❌ No se recibió respuesta de PayPal.";
+                  document.getElementById("payment-status-paypal").style.color = "red";
+                  document.getElementById("submit-button").disabled = true;
+                  document.getElementById("paypal-payment").style.display = "none";
+                },
+              })
+              .render("#paypal-button-container");
+          }
+        </script>
+
+                    <p>
+                        <b>Al diligenciar esta información autorizas a la
+                            Corporación Penser,
+                            el tratamiento de tus datos personales con fines
+                            acordes a nuestro
+                            propósito institucional</b>
+                    </p>
+                    <button
+                        type="button"
+                        id="submit-button"
+                        disabled
+                        onclick="submitForm()">
+                        Enviar
+                    </button>
+                </form>
+                <p id="mensaje" style="display: none; color: green">
+                    ✅ Datos enviados con éxito.
+                </p>
+            </div>
+
+            <script>
+      function showSelect() {
+        const actividad = document.getElementById("actividad").value;
+        document.getElementById("diplomadoSelect").classList.add("hidden");
+        document.getElementById("cursoEjecutivoSelect").classList.add("hidden");
+        document.getElementById("apcSelect").classList.add("hidden");
+        document.getElementById("reconocimientoSelect").classList.add("hidden");
+        document.getElementById("moduloSelect").classList.add("hidden");
+        document.getElementById("moduloEspecificoSelect").classList.add("hidden");
+        document.getElementById("montoContribucionSelect").classList.add("hidden");
+        document.getElementById("montoEspecificoSelect").classList.add("hidden");
+        document.getElementById("montoapcSelect").classList.add("hidden");
+
+        // Limpiar valores seleccionados en selects ocultos
+        document
+          .querySelectorAll(
+            "#diplomadoSelect select, #cursoEjecutivoSelect select, #apcSelect select, #reconocimientoSelect select, #moduloSelect select, #moduloEspecificoSelect select"
+          )
+          .forEach((select) => {
+            select.value = "";
+          });
+
+        if (actividad === "DIPLOMADO INTERNACIONAL") {
+          document.getElementById("diplomadoSelect").classList.remove("hidden");
+          document.getElementById("montoContribucionSelect").classList.remove("hidden");
+        } else if (actividad === "CURSO EJECUTIVO") {
+          document.getElementById("cursoEjecutivoSelect").classList.remove("hidden");
+          document.getElementById("montoContribucionSelect").classList.remove("hidden");
+        } else if (actividad === "PENSER ACADEMY") {
+          document.getElementById("apcSelect").classList.remove("hidden");
+          document.getElementById("montoapcSelect").classList.remove("hidden");
+        } else if (actividad === "RECONOCIMIENTO LATINOAMERICANO") {
+          document.getElementById("reconocimientoSelect").classList.remove("hidden");
+          document.getElementById("montoContribucionSelect").classList.remove("hidden");
+        } else if (actividad === "CONTRIBUCIÓN GENERAL") {
+          document.getElementById("montoContribucionSelect").classList.remove("hidden");
+        }
+      }
+
+      function showModuloSelect() {
+        const diplomado = document.getElementById("diplomado").value;
+        const moduloSelect = document.getElementById("moduloSelect");
+        const moduloEspecificoSelect = document.getElementById("moduloEspecificoSelect");
+        const montoContribucionSelect = document.getElementById("montoContribucionSelect");
+        const montoEspecificoSelect = document.getElementById("montoEspecificoSelect");
+
+        if (diplomado) {
+          // Mostrar el select de módulos generales a menos que se seleccionen las opciones específicas
+          if (
+            diplomado === "Escritura y publicacion de textos cientificos" ||
+            diplomado === "Inteligencia Artificial para la educación" ||
+            diplomado === "Evaluación de impacto de la Educación Superior"
+          ) {
+            moduloEspecificoSelect.classList.remove("hidden"); // Mostrar módulos específicos
+            moduloSelect.classList.add("hidden"); // Ocultar módulos generales
+            montoEspecificoSelect.classList.remove("hidden"); // Mostrar montos específicos
+            montoContribucionSelect.classList.add("hidden"); // Ocultar montos generales
+          } else {
+            moduloSelect.classList.remove("hidden"); // Mostrar módulos generales
+            moduloEspecificoSelect.classList.add("hidden"); // Ocultar módulos específicos
+            montoContribucionSelect.classList.remove("hidden"); // Mostrar montos generales
+            montoEspecificoSelect.classList.add("hidden"); // Ocultar montos específicos
+          }
+        }
+      }
+
+      // Función para enviar el formulario
+      function submitForm() {
+        const form = document.getElementById("mainForm");
+        const formData = new FormData(form);
+        const data = {};
+
+        // Llenar el resto de los datos a partir del FormData
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        //console.log("Formulario a enviar:", data);
+
+        // Comprobar si los campos requeridos están completos
+        if (
+          !data["nombre"] ||
+          !data["apellido"] ||
+          !data["correo"] ||
+          !data["actividad"]
+        ) {
+          alert("Por favor, complete todos los campos requeridos.");
+          return;
+        } else {
+          fetch(
+            "https://script.google.com/macros/s/AKfycbzKHKOda3Ci0J4GGCAxrDYVtxF7MpmksowQ7jSGd0evixFjfdxJ2nM9TwjllDlikAld-g/exec",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+              mode: "no-cors",
+            }
+          )
+            .then((response) => {
+              //console.log("Respuesta del servidor:", response);
+              document.getElementById("mensaje").style.display = "block";
+              document.getElementById("submit-button").disabled = true;
+            })
+            .catch((error) => {
+              //console.error("Error al enviar los datos:", error);
+            });
+        }
+      }
+    </script>
+        </body>
+    </html>

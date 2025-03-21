@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     <form method="POST">
-        <label for="titulo"><?php echo $translations['title']; ?>:</label><br>
+        <label for="titulo"><?php echo $translations['header']; ?>:</label><br>
         <input type="text" id="titulo" name="titulo" required><br><br>
 
         <label for="invitados"><?php echo $translations['number_of_guests']; ?>:</label><br>
